@@ -1,5 +1,3 @@
-Windows Server Build
-```
 #ps1_sysnative
 $ErrorActionPreference = 'SilentlyContinue'
 Set-ExecutionPolicy Unrestricted LocalMachine -Force
@@ -26,4 +24,3 @@ Set-Service -Name sshd -StartupType 'Automatic'
 #net localgroup Administrators student$i /add}
 $additionalscript
 exit 1001
-```
