@@ -1,5 +1,3 @@
-Kali Build
-```
 heat_template_version: 2018-08-31
 
 description: Student Kali OpStation
@@ -88,4 +86,3 @@ resources:
           params:
             $password: { get_param: password }
             $ssh_port: { get_param: ssh_port}
-```
