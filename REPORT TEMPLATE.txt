@@ -1,0 +1,53 @@
+Op: 
+Date: 
+Start time: 
+End time: 
+------------------------
+SOM
+------------------------
+>T1:     
+->T2:    
+-->T3:   
+--->T4:  
+---->T5: 
+------------------------
+Creds
+------------------------
+root_user::root
+root_pass::kalikali
+user::student20
+pass::password20
+=========================
+T1: 
+=========================
+X-----------------------
+//hax
+ssh -MS /tmp/T1 -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null student20@10.50.32.246
+//exit
+exit
+------------------------X
+=========================
+=========================
+T2: 
+=========================
+X-----------------------
+//HAX >:)
+ssh -S /tmp/T1 dummy -O forward -L 2000:<ip>:22
+ssh -MS /tmp/T2 -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null student20@0.0.0.0
+//BEGIN VETTING
+w
+<result>
+uname -a
+<result>
+date -u
+<result>
+//LOGS
+<refer to logs 4 and .. >
+//MALWARE
+ps -elf
+ls /,/root,/home,/tmp
+cat /etc/crontab,/etc/cron.*/*
+//EXIT
+
+------------------------X
+=========================
