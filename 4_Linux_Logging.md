@@ -112,7 +112,7 @@ date -d @time
 grep -v ‘sshd\[1369\]’ /var/log/secure > /tmp/secure.clean
 # grep through cleaned LOG to make sure
 cat /tmp/secure.clean > /var/log/secure
-touch -t 201504211118.24 /var/log/secure (time equals last entry in log)
+touch -t 201504211118.24 /var/log/secure                                             # time equals last entry in log
 rm -rf /tmp/secure.clean
 
 
@@ -132,12 +132,12 @@ rm -rf /tmp/cron
 service auditd stop
 grep -n ‘192.0.2.80’ /var/log/audit/audit.log <IP address,PID,time>
 wc -l /var/log/audit/audit.log
-head -n 38 /var/log/audit/audit.log > /tmp/aud.log     # where X is the line number before your entries start)
-wc -l /tmp/aud.log # (should be X lines)
+head -n 38 /var/log/audit/audit.log > /tmp/aud.log                                   # where X is the line number before your entries start)
+wc -l /tmp/aud.log                                                                   # should be X lines
 tail /tmp/aud.log
 date -d @epoch-time-of-last-entry 1476342061.290
 cat /tmp/aud.log > /var/log/audit/audit.log
-chmod 0600 /var/log/audit/audit.log (or whatever the preexisting privs were)
+chmod 0600 /var/log/audit/audit.log                                                  # or whatever the preexisting privs were
 touch -t time of last entry([CC]yymmddhhmm[.ss]) /var/log/audit/audit.log
 ls -al /var/log/audit/audit.log
 rm /tmp/aud.log
