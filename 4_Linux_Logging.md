@@ -103,7 +103,7 @@ date -d @time
 11. Restart logging
 ```
 ```Bash
-<# CLEANING LOGS #>
+### CLEANING LOGS ###
 
 
 
