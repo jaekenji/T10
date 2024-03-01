@@ -12,7 +12,7 @@ iptables -t nat -A PREROUTING -p tcp --dport 12345 -j DNAT --to-destination <the
 ```Bash
 # like a tunnel but not
 # any traffic coming to this machines port 22 will come back to me
-iptables-t nat -A POSTROUTING -p tcp --dport 22 -j SNAT --to-source <my ip>
+iptables -t nat -A POSTROUTING -p tcp --dport 22 -j SNAT --to-source <my ip>
 ```
 ```Bash
 <<.
