@@ -23,10 +23,42 @@ snmp-check 127.0.0.1 -c public > snmp_test      # 161 or 162
 rpcinfo -p <target>                             # 111 or 135 ;)
 ```
 ```bash
-# Instead of -O forward, open port for dynamic forwarding
-ssh -S /tmp/T1 -D 9050 root@10.0.0.1
+ssh -S /tmp/T1 dummy -O foraward -D 9050
 ```
+
 ------
+
 ```
-eller
+=====
+-----
+T1: 10.50.0.1
+-----
+//SCANZ
+ping 192.169.0.1 -c 5
+# results
+tracepath traceroute 192.168.0.1
+ssh -S /tmp/T1 -dummy -O forward -D 9050 # ON OUR MACHINE
+
+#                 (doesnt check if host is up)    (no dns)    (verbosely)     (slower and controlled)     (full tcp connect scan)      (tcp ports)
+proxychains nmap -Pn                             -n          -vvv            -T3                         -sT                          -pT:22,111,22022,80,443,445,3389 192.168.0.1
+
+
+
+
+
+=====
+=====
+-----
+T2: 192.168.0.1
+-----
+
+
+
+
+
+
+
+
+
+=====
 ```
