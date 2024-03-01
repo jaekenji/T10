@@ -1,4 +1,7 @@
 ```Bash
+lsmod # check if iptables is loaded
+```
+```Bash
 iptables -t nat -L
 ```
 ```Bash
