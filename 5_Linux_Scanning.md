@@ -26,3 +26,7 @@ rpcinfo -p <target>                             # 111 or 135 ;)
 # Instead of -O forward, open port for dynamic forwarding
 ssh -S /tmp/T1 -D 9050 root@10.0.0.1
 ```
+------
+```
+eller
+```
