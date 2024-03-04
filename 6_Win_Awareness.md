@@ -12,7 +12,7 @@ echo %userdomain%
 systeminfo
 
 tasklist
-(wmci process get processid,parentprocessid,executablepath)
+wmic process get ProcessId,ParentProcessId,ExecutablePath
 
 netstat /a /b /n /o
 
