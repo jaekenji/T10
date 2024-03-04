@@ -2,8 +2,8 @@
 - daily reads
 - make op directory
 ```
-```
-mkdir student20_04-03-24_HH06<span style="color: red">red</span>
+<span style="color: red">red</span>```
+mkdir student20_04-03-24_HH06
 ```
 ```
 - open a terminal for each target
