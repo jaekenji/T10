@@ -10,18 +10,19 @@ mkdir student20_04-03-24_HH06
 - change into all directories
 - make notes for the op
 ```
-```
+```console
 vim notes_04-03-24.txt
 ```
 ```
 - start scripts
 ```
-```
+```console
 scipt -af termscreen.$$
 ```
 ```
 - edit notes
 ```
+-----
 ```
 OP: HH06
 Date: 3/4/24
@@ -44,12 +45,14 @@ T1: Float Given
 ==========
 X---------
 ```
+-----
 - save
 - copy paste ssh command
-```
+```console
 ssh -MS /tmp/Louise -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null student20@<ip>
 ```
 - "MC I AM ON TARGET 1"
+-----
 ```
 ****** VETTING ******
 w
@@ -98,6 +101,7 @@ netstat -ltpn
 ls -latr /var/log
 find / \( -path /proc -prune -o -path /sys -prune \) -o -mmin -<minutes> -type f -print0 | xargs -0 ls -latr
 ```
-```
+-----
+```console
 ssh -S /tmp/Louise dummy -O forward -L 1111:<next ip>
 ```
