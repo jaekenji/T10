@@ -138,4 +138,9 @@ sudo iptables -t nat -A POSTROUTING -p tcp --dport 22 -j SNAT --to-source <MY IP
 or
 iptables -t nat -A POSTROUTING -p tcp --dport 22 -j MASQUERADE
 
+
+****** ABNORMAL LOGGING ******
+
+
+
 ```
