@@ -75,8 +75,11 @@ arp
 tracert
 
 dir /b/s *.txt
+```
+```
 - search for all text files in directory
-
+```
+```cmd
 dir /b/s *.exe >> c:\filelist.txt
 type filelist.txt | find /i "string im lokking for"
 ```
