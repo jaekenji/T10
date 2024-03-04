@@ -69,7 +69,7 @@ reg import
 ```
 ```cmd
 doskey
-wevutil
+wevtutil
 schtasks
 arp
 tracert
