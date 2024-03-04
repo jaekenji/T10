@@ -31,3 +31,59 @@ T1: Float Given
 X---------
 ```
 - save
+- copy paste ssh command
+```
+ssh -MS /tmp/Louise -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null student20@<ip>
+```
+- "MC I AM ON TARGET 1"
+```
+****** VETTING ******
+w
+date; date -u
+uname -a
+
+ls -latr /
+ls -latr .
+ls -latr ..
+ls -latr /root
+ls -latr /tmp
+ls -latr /home
+
+ps -elfH
+ifconfig -a OR ip addr
+sudo netstat -auntp OR ss -auntp
+
+ls -latr /var/spool/cron
+tail -100 /var/spool/cron
+df
+
+ls -latr /var/*/*acc*             # processing account
+ls -latr /var/*log*               # checking for either logs being gathered or sent 
+ls -latr /var/log/*               
+ls -latr /etc/*syslog*
+
+for user in $(cut -f1 d: /etc/passwd); do echo "###### $user crontab is :"
+cat /etc/crontab
+ls -la /etc/cron.*
+
+find / \( -path /proc -prune -o -path /sys -prune \) -o -mmin -<duration in minutes since initial connection> -type f -print0 | xargs -0 ls -latr
+ 
+sestatus OR getenforce
+
+sudo cat /root/.bash_history
+sudo cat ~/.bash_history
+
+-----------------------------------------------------------------------------
+
+Before Disconnect:
+
+w
+ls -latr /tmp
+ps -elf
+netstat -ltpn
+ls -latr /var/log
+find / \( -path /proc -prune -o -path /sys -prune \) -o -mmin -<your minutes on target> -type f -print0 | xargs -0 ls -latr
+```
+```
+ssh -S /tmp/Louise dummy -O forward -L 1111:<next ip>
+```
