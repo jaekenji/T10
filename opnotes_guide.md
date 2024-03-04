@@ -2,7 +2,8 @@
 - daily reads
 - make op directory
 ```
-<span style="color: red">red</span>```
+<span style="color: red">red</span>
+```
 mkdir student20_04-03-24_HH06
 ```
 ```
