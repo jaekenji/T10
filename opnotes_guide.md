@@ -3,7 +3,7 @@
 - make op directory
 ```
 ```
-mkdir student20_04-03-24_HH06
+mkdir student20_04-03-24_HH06<span style="color: red">red</span>
 ```
 ```
 - open a terminal for each target
