@@ -66,7 +66,7 @@ for user in $(cut -f1 d: /etc/passwd); do echo "###### $user crontab is :"
 cat /etc/crontab
 ls -la /etc/cron.*
 
-find / \( -path /proc -prune -o -path /sys -prune \) -o -mmin -<duration in minutes since initial connection> -type f -print0 | xargs -0 ls -latr
+find / \( -path /proc -prune -o -path /sys -prune \) -o -mmin -<minutes> -type f -print0 | xargs -0 ls -latr
  
 sestatus OR getenforce
 
@@ -82,7 +82,7 @@ ls -latr /tmp
 ps -elf
 netstat -ltpn
 ls -latr /var/log
-find / \( -path /proc -prune -o -path /sys -prune \) -o -mmin -<your minutes on target> -type f -print0 | xargs -0 ls -latr
+find / \( -path /proc -prune -o -path /sys -prune \) -o -mmin -<minutes> -type f -print0 | xargs -0 ls -latr
 ```
 ```
 ssh -S /tmp/Louise dummy -O forward -L 1111:<next ip>
