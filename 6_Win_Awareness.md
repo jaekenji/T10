@@ -1,6 +1,6 @@
 ```cmd
 date /t
-time/t
+time /t
 
 wmic cpu get loadpercentage
 wmic logicaldisk get name
