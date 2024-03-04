@@ -2,8 +2,7 @@
 - daily reads
 - make op directory
 ```
-```python
-print(red)
+```console
 mkdir student20_04-03-24_HH06
 ```
 ```
