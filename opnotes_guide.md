@@ -2,8 +2,8 @@
 - daily reads
 - make op directory
 ```
-<span style="color: red">red</span>
-```
+```python
+print(red)
 mkdir student20_04-03-24_HH06
 ```
 ```
