@@ -46,12 +46,16 @@ T1: Float Given
 X---------
 ```
 -----
+```
 - save
 - copy paste ssh command
+```
 ```console
 ssh -MS /tmp/Louise -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null student20@<ip>
 ```
+```
 - "MC I AM ON TARGET 1"
+```
 -----
 ```
 ****** VETTING ******
