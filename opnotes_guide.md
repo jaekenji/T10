@@ -17,7 +17,7 @@ vim notes_04-03-24.txt
 - start scripts
 ```
 ```console
-scipt -af termscreen.$$
+script -af termscreen.$$
 ```
 ```
 - edit notes
