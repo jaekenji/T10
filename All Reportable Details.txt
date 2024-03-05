@@ -47,6 +47,20 @@ X    X       Reccomendation
 
 
 
+LINUX ABNORMAL LOGGING REPORTABLE DETAILS
+
+MC   NSDB    DECRIPTION
+X    X       Process name/options, PID, PPID, user
+X    X       Location of configuration file and if it's abnormal or irregular
+X    X       IP (or hostname) of where logs are being sent
+X    X       Network connections opened/esablished by abnormal logging
+X    X       Open source documentation if available
+X    X       Brief description
+X    X       Recommendation
+
+
+
+
 
 
 
@@ -99,3 +113,19 @@ X    X       Installation folder
      X       Can we read logs? if yes, 5 most recent lines of logs
 X    X       Open source documentation
 X    X       Reccomendation
+
+
+
+
+WINDOWS ABNORMAL LOGGING REPORTABLE DETAILS
+
+MC   NSDB    DECRIPTION
+X    X       Process name/options, PID, PPID, user
+X    X       Location of configuration file and if it's abnormal or irregular
+X    X       IP (or hostname) of where logs are being sent
+X    X       Network connections opened/esablished by abnormal logging
+X    X       Open source documentation if available
+X    X       Brief description
+X    X       Recommendation
+
+
