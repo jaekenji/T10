@@ -19,6 +19,8 @@ Computer
 Description
 ```
 ```
+***** EXAMPLE *****
+
 Event[24]:
  Log Name: Security
  Source: Microsoft-Windows-Security-Auditing
