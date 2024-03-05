@@ -18,13 +18,13 @@ X    X       Recommendation
 
 WINDOWS USERS REPORTABLE DETAILS
 
-MC AND NSDB
-Device and Logged in users
-Access time     -  How long theyve been logged in
-Access method   -  If they accessed locally or remotely
-Privileges      -  What are they capable of doing
-Activity        -  What they are doing
-Reccomendation  -  Is there adjustments we will make to our plans
+MC  NSDB     DESCRIPTION
+X    X       Device and Logged in users
+X    X       Access time > How long theyve been logged in
+X    X       Access method  > If they accessed locally or remotely
+X    X       Privileges > What are they capable of doing
+X    X       Activity > What they are doing
+X    X       Reccomendation > Is there adjustments we will make to our plans
 
 
 
