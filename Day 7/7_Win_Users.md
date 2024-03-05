@@ -26,3 +26,16 @@ netstat /anob
 tasklist /V
 wmic process get ProcessId,ParentProcessId,ExecutablePath
 ```
+```cmd
+:: whos on the box? are they elevated privileges?
+query user
+
+:: what time is it? is it a reasonable hour?
+time /t
+
+:: whats he doing? is he running security?
+tasklist /V
+
+:: what connections are there? are there multiple sessions?
+netstat /anob
+```
