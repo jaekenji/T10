@@ -1,5 +1,7 @@
 **********     LINUX     **********
 
+
+
 LINUX PRIVILEGED USERS REPORTABLE DETAILS
 
 MC  NSDB     DESCRIPTION
@@ -46,7 +48,11 @@ X    X       Reccomendation
 
 
 
+
+
+
 **********    WINDOWS    **********
+
 
 
 WINDOWS PRIVILEGED USERS REPORTABLE DETAILS
