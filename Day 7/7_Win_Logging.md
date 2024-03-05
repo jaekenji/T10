@@ -50,3 +50,11 @@ Process Information:
         Process ID:           0x434
         Process Name:         C:\Windows\System32\rund1132.exe
 ```
+```cmd
+auditpol
+wevtutil qe security /c:25 /rd:true /f:text
+wmic
+```
+```powershell
+Get-EventLog system -newest 3 | Format-List
+```
