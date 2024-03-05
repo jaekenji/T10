@@ -1,1 +1,42 @@
 
+WINDOWS MALWARE REPORTABLE DETAILS
+
+MC   NSDB    DECRIPTION
+X    X       Process name/options, PID, PPID, user, and hash
+X    X       File type
+X    X       Associated logs
+X    X       Location and lines of any persistence
+     X       Full path of file, and supported
+     X       Network connections from malware
+     X       Identifiable Text
+     X       Modules loaded by malware
+X    X       Open source documentation if available
+X    X       Brief description
+X    X       Recommendation
+
+
+
+WINDOWS USERS REPORTABLE DETAILS
+
+MC AND NSDB
+Device and Logged in users
+Access time     -  How long theyve been logged in
+Access method   -  If they accessed locally or remotely
+Privileges      -  What are they capable of doing
+Activity        -  What they are doing
+Reccomendation  -  Is there adjustments we will make to our plans
+
+
+
+WINDOWS SECURITY PRODUCT REPORTABLE DETAILS
+
+MC   NSDB    DECRIPTION
+X    X       Name and Version
+X    X       Primary Reg Key
+X    X       Installation folder
+     X       Directory location of associated files
+     X       Timestamp of all associated log files
+     X       Cloud based? ye sor no
+     X       Can we read logs? if yes, 5 most recent lines of logs
+X    X       Open source documentation
+X    X       Reccomendation
