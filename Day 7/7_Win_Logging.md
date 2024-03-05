@@ -73,3 +73,42 @@ wevtutil qe Application /c:100 /f:text
 :: check to see security log generated
 wevtutil qe System /f:text | findstr /C:"Event ID: 104"
 ```
+```
+Common Event IDs
+
+
+Successful Logon: 4624 (...)
+Successful Logoff: 4634 (...)
+Failed Login Attempts: 4625 (...)
+Accoutn Locked-out: 644
+
+
+File Accessed: 4656/4663
+File Deleted: 4663
+
+
+User Created: 4720
+Password Reset: 4724
+
+
+Log Rights Granted/Removed: 4704/4705
+Access Granted/Removed: 4717/4718
+Audit or Account Policies Changed: 4719/4739
+User Added to Security-Related group: 4728
+
+
+Log Cleared: 1102
+Logging Stopped: 1100
+```
+```
+ABNORMAL LOGGING REPORTABLE DETAILS
+
+MC   NSDB    DECRIPTION
+X    X       Process name/options, PID, PPID, user
+X    X       Location of configuration file and if it's abnormal or irregular
+X    X       IP (or hostname) of where logs are being sent
+X    X       Network connections opened/esablished by abnormal logging
+X    X       Open source documentation if available
+X    X       Brief description
+X    X       Recommendation
+```
