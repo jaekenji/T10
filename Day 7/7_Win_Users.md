@@ -29,6 +29,7 @@ wmic process get ProcessId,ParentProcessId,ExecutablePath
 ```cmd
 :: whos on the box? are they elevated privileges?
 query user
+wmic computersystem get username
 
 :: what time is it? is it a reasonable hour?
 time /t
