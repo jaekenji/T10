@@ -58,3 +58,18 @@ wmic
 ```powershell
 Get-EventLog system -newest 3 | Format-List
 ```
+```cmd
+:: wevtutil option to find # of events and size of log
+:: wevtutil qe <LogName> /c:<Number of events> /f:text
+wevtutil qe Application /c:100 /f:text
+
+:: backup and clear log in one line
+:: wevtutil epl <LogName> <LogName>Backup.evtx & wevtutil cl <LogName>
+wevtutil epl Application ApplicationBackup.evtx & wevtutil cl Application
+
+:: clearing leaves a security log
+:: check to see if cleared
+wevtutil qe Application /c:100 /f:text
+:: check to see security log generated
+wevtutil qe System /f:text | findstr /C:"Event ID: 104"
+```
