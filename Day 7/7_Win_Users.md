@@ -54,6 +54,9 @@ REPORTABLE DETAILS
 MC AND NSDB
 
 Device and Logged in users
-How long theyve been logged in
-If they accessed locally or remotely
-Wh
+Access time     -  How long theyve been logged in
+Access method   -  If they accessed locally or remotely
+Privileges      -  What are they capable of doing
+Activity        -  What they are doing
+Reccomendation  -  Is there adjustments we will make to our plans
+```
