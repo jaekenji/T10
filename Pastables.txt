@@ -111,20 +111,77 @@ ssh -S /tmp/Louise dummy -O forward -L 1111:<next ip>
 
 ****** VETTING ******
 
+query user
+wmic computersystem get username
+date /t & time /t
+systeminfo
+ver
+
+dir C:\ /a /o:-d
+dir /a /o:-d
+dir /a /o:-d ..
+
+dir /o:d /t:w c:\
+dir /o:d /t:w c:\windows\temp
+dir /o:d /t:w c:\windows\
+dir /o:d /t:w c:\windows\system32
+dir /o:d /t:w c:\windows\system32\winevt\logs
+dir /o:d /t:w &quot;%appdata%\microsoft\windows\start menu\programs\startup&quot;
+
+dir C:\Users\Administrator /a /o:-d
+dir C:\Windows\Temp /a /o:-d
+dir C:\Users /a /o:-d
+
+tasklist /v
+wmic process get ProcessId,ParentProcessId,ExecutablePath | findstr <PID>
+ipconfig /all
+netstat /anob
+
+dir /a /s /b /o:-d "C:\Windows\System32\Tasks"
+dir /a /s /b /o:-d "C:\Windows\System32\Tasks\*"
+dir /a /s /b /o:-d "C:\Windows\Tasks\*"
+
+at
+schtasks /query /v /fo LIST
+schtasks /query /v /fo LIST | findstr /i /c:"TaskName" /c:"Task To Run"
+for /f "tokens=1,* delims=:" %a in ('schtasks /query /v /fo LIST ^| findstr /i /c:"TaskName" /c:"Task To Run"') do @(echo %b & set /p "= " <nul & echo.)
+
+type C:\Users\Administrator\AppData\Roaming\Microsoft\Windows\PowerShell\PSReadline\ConsoleHost_history.txt
+type C:\Users\Administrator\AppData\Roaming\Microsoft\Windows\PowerShell\PSReadline\ConsoleHost_history.txt
+
+wevtutil qe security /c:25 /rd:true /f:text
 
 
 
 
+INFO
+
+net user
+net localgroup
+net session
+net start
+type %systemroot%\system32\drivers\etc\hosts
+arp -a
+route print
+driverquery /v
+wmic baseboard get Manufacturer, Model, PRoduct, SerialNumber, Version
+wmic cpu get deviceID, Addresswidth, MaxClockSpeed, Name, Manufacturer
+wmic logicaldisk get name, freespace, systemname, filesystem, size, volumeserialnumber
+wmic path Win32_VideoController get caption, CurrentHorizontalResolution, CurrentVerticalResolution, Description, DriverVersion, AdapterRAM /format:list
+wmic printer list full
+wmic path win32_pnpentity where "ConfigManagerErrorCode<>0" get Name, PNPDeviceID
+wmic qfe list full
+wmic service list full
+wmic product get Caption, InstallDate, Vendor
 
 
 
+----------------------------------------------------------------------
 
+Before Disconnect:
 
-
-
-
-
-
-
-
-
+dir /o:d /t:w c:\windows\temp
+dir /o:d /t:w c:\windows\system32\winevt\logs
+wevtutil qe security /c:25 /rd:true /f:text (whatever has updated from previous dir)
+netstat /anob
+tasklist
