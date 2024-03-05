@@ -1,4 +1,8 @@
 
+
+**********    WINDOWS    **********
+
+
 WINDOWS MALWARE REPORTABLE DETAILS
 
 MC   NSDB    DECRIPTION
