@@ -11,7 +11,7 @@ netsh  [-a AliasFile]  [-c Context]  [-r RemoteComputer]  [{NetshCommand| -f Scr
 ssh -MS /tmp/T1 student@192.168.0.1
 ```
 ```cmd
-:: ON TARGET
+:: ON TARGET 1
 
 :: check if theres any firewall rules to begin with
 netsh interface portproxy show all
