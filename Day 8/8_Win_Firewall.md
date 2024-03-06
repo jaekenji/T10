@@ -36,4 +36,5 @@ ssh -MS /tmp/t2 -p 2222 student20@0.0.0.0
 
 :: deleting rules
 netsh interface portproxy delete v4tov4 listenaddress=192.168.0.1 listenport=1111 connectaddress=192.168.0.2 connectport=22 protocol=tcp
+::                          ^^ important part
 ```
