@@ -31,3 +31,9 @@ ssh -S /tmp/t1 dummy -O forward -L 2222:127.0.0.1:1111
 # does 
 ssh -MS /tmp/t2 -p 2222 student20@0.0.0.0
 ```
+```cmd
+:: ON TARGET 1
+
+:: deleting rules
+netsh interface portproxy delete v4tov4 listenaddress=192.168.0.1 listenport=1111 connectaddress=192.168.0.2 connectport=22 protocol=tcp
+```
