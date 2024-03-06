@@ -4,7 +4,7 @@ Netsh used in command line
 ```
 netsh  [-a AliasFile]  [-c Context]  [-r RemoteComputer]  [{NetshCommand| -f ScriptFile}]
 ```
-```shell
+```console
 # ON SELF
 
 # open socket to T1
@@ -22,7 +22,7 @@ netsh interface portproxy add v4tov4 listenaddress=192.168.0.1 listenport=1111 c
 :: check if rule is in place
 netsh interface portproxy show all
 ```
-```shell
+```console
 # ON SELF
 
 # reference original socket, and forward from 2222 to their 1111
