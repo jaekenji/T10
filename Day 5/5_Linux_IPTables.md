@@ -3,7 +3,7 @@ lsmod # check if iptables is loaded
 ```
 ```Bash
 # make sure the device is a router
-echo 1 | sudo tee echo 1
+echo 1 | sudo tee /proc/sys/net/ipv4/ip_forward
 # OR
 sudo sysctl -w net.ipv4.ip_forward=1
 ```
