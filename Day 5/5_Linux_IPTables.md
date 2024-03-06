@@ -2,7 +2,13 @@
 lsmod # check if iptables is loaded
 ```
 ```Bash
-iptables -t nat -L
+# make sure the device is a router
+echo 1 | sudo tee echo 1
+# OR
+sudo sysctl -w net.ipv4.ip_forward=1
+```
+```Bash
+iptables -t nat -nvL
 ```
 ```Bash
 # like a tunnel but not
