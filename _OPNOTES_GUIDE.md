@@ -51,44 +51,57 @@ X---------
 - copy paste ssh command
 ```
 ```console
+==========================
+          LINUX
+==========================
+
+
+****** SSH ******
+
 ssh -MS /tmp/Louise -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null student20@<ip>
-```
-```
-- "MC I AM ON TARGET 1"
-```
------
-```
+
+ssh -S /tmp/Louise dummy -O forward -L 1111:<next ip>
+
+
 ****** VETTING ******
 w
 date; date -u
 uname -a
 
-ls -latr /
-ls -latr .
-ls -latr ..
-ls -latr /root
-ls -latr /tmp
-ls -latr /home
+sudo ls -latr /
+sudo ls -latr .
+sudo ls -latr ..
+sudo ls -latr /root
+sudo ls -latr /tmp
+sudo ls -latr /home
 
 ps -elfH
 ifconfig -a OR ip addr
 sudo netstat -auntp OR ss -auntp
 
-ls -latr /var/spool/cron
+sudo ls -latr /var/spool/cron
+
+sudo ls -latr /var/spool/cron/crontabs
+sudo ls -latr /var/spool/cron/atjobs
+sudo ls -latr /var/spool/cron/atspool
+
 tail -100 /var/spool/cron
 df
 
-ls -latr /var/*/*acc*             # processing account
-ls -latr /var/*log*               # checking for either logs being gathered or sent 
-ls -latr /var/log/*               
-ls -latr /etc/*syslog*
+sudo ls -latr /var/*/*acc*             # processing account
+sudo ls -latr /var/*log*               # checking for either logs being gathered or sent 
+sudo ls -latr /var/log/*               
+sudo ls -latr /etc/*syslog*
 
-for user in $(cut -f1 d: /etc/passwd); do echo "###### $user crontab is :"
+sudo cat /etc/rsyslog.d/*.conf
+sudo cat /etc/rsyslog.conf
+
+for user in $(cut -d: -f1  /etc/passwd); do echo "###### $user crontab is :"; sudo crontab -u $user -l; done
 cat /etc/crontab
 ls -la /etc/cron.*
 
-find / \( -path /proc -prune -o -path /sys -prune \) -o -mmin -<minutes> -type f -print0 | xargs -0 ls -latr
- 
+find / \( -path /proc -prune -o -path /sys -prune \) -o -mmin -30 -type f -print0 | xargs -0 ls -latr
+
 sestatus OR getenforce
 
 sudo cat /root/.bash_history
@@ -104,6 +117,146 @@ ps -elf
 netstat -ltpn
 ls -latr /var/log
 find / \( -path /proc -prune -o -path /sys -prune \) -o -mmin -<minutes> -type f -print0 | xargs -0 ls -latr
+exit
+
+
+****** SCAN ******
+
+
+ip r
+ip n
+ping -c <ip>
+nc -nczz <ip> <port>
+ssh -S /tmp/<T> dummy -O forward -D 9050
+proxychains nmap -Pn -n -vvv -T3 -sT -pT:22,111,22022,80,443,445,3389 <ip>
+ssh -S /tmp/<T> dummy -O cancel -D 9050
+
+
+***** IPTABLES ******
+
+(is iptables on?)
+lsmod
+
+(are there rules?)
+sudo iptables -L
+sudo iptables -t nat -L -n
+
+(configure)
+sudo iptables -t nat -A PREROUTING -p tcp --dport 11337 -j DNAT --to-destination <ip>:<dst>
+
+sudo iptables -t nat -A POSTROUTING -p tcp --dport 22 -j SNAT --to-source <MY IP (KALI NON FLOAT)>
+or
+iptables -t nat -A POSTROUTING -p tcp --dport 22 -j MASQUERADE
+
+
+
+
+
+
+============================
+          WINDOWS
+============================
+
+
+****** SSH ******
+
+ssh -MS /tmp/Louise -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null student20@<ip>
+
+ssh -S /tmp/Louise dummy -O forward -L 1111:<next ip>
+
+
+****** VETTING ******
+
+query user
+wmic computersystem get username
+
+net user <username>
+
+date /t & time /t
+systeminfo
+ver
+
+tasklist /v
+wmic process get ProcessId,ParentProcessId,ExecutablePath | findstr <PID>
+ipconfig /all
+netstat /anob
+
+dir C:\ /a /o:-d
+dir /a /o:-d
+dir /a /o:-d ..
+
+dir /o:d /t:w c:\windows\temp
+dir /o:d /t:w c:\windows\
+dir /o:d /t:w c:\windows\system32
+dir /o:d /t:w c:\windows\system32\winevt\logs
+dir /o:d /t:w "%appdata%\microsoft\windows\start menu\programs\startup"
+
+dir C:\Users\Administrator /a /o:-d
+dir C:\Windows\Temp /a /o:-d
+dir C:\Users /a /o:-d
+dir C:\Users\Public /a /s /o-d
+
+
+
+netsh advfirewall show allprofiles
+net share
+
+certutil -hashfile "C:\" MD5
+
+reg query hklm\software\microsoft\windows\currentversion\run
+reg query hklm\software\microsoft\windows\currentversion\runonce
+reg query hklm\software
+reg query hklm\SYSTEM\CurrentControlSet\Services
+
+dir /a /s /b /o:-d "C:\Windows\System32\Tasks"
+dir /a /s /b /o:-d "C:\Windows\System32\Tasks\*"
+dir /a /s /b /o:-d "C:\Windows\Tasks\*"
+
+at
+schtasks /query /v /fo LIST
+schtasks /query /v /fo LIST | findstr /i /c:"TaskName" /c:"Task To Run"
+for /f "tokens=1,* delims=:" %a in ('schtasks /query /v /fo LIST ^| findstr /i /c:"TaskName" /c:"Task To Run"') do @(echo %b & set /p "= " <nul & echo.)
+
+type C:\Users\Administrator\AppData\Roaming\Microsoft\Windows\PowerShell\PSReadline\ConsoleHost_history.txt
+type C:\Users\Administrator\AppData\Roaming\Microsoft\Windows\PowerShell\PSReadline\ConsoleHost_history.txt
+
+wevtutil qe security /c:25 /rd:true /f:text
+
+
+
+
+INFO
+
+net user
+net localgroup
+net session
+net start
+type %systemroot%\system32\drivers\etc\hosts
+arp -a
+route print
+driverquery /v
+wmic baseboard get Manufacturer, Model, PRoduct, SerialNumber, Version
+wmic cpu get deviceID, Addresswidth, MaxClockSpeed, Name, Manufacturer
+wmic logicaldisk get name, freespace, systemname, filesystem, size, volumeserialnumber
+wmic path Win32_VideoController get caption, CurrentHorizontalResolution, CurrentVerticalResolution, Description, DriverVersion, AdapterRAM /format:list
+wmic printer list full
+wmic path win32_pnpentity where "ConfigManagerErrorCode<>0" get Name, PNPDeviceID
+wmic qfe list full
+wmic service list full
+wmic product get Caption, InstallDate, Vendor
+
+
+
+----------------------------------------------------------------------
+
+Before Disconnect:
+
+dir /o:d /t:w c:\windows\temp
+dir /o:d /t:w c:\windows\system32\winevt\logs
+wevtutil qe security /c:25 /rd:true /f:text (whatever has updated from previous dir)
+netstat /anob
+tasklist
+
 ```
 -----
 ```console
