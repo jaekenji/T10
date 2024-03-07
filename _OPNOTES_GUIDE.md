@@ -52,6 +52,9 @@ X---------
 ```
 -----
 ```console
+ssh -MS /tmp/Louise -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null student20@<the ip>
+```
+```console
 ssh -S /tmp/Louise dummy -O forward -L 1111:<next ip>
 ```
 ```
