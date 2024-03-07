@@ -8,7 +8,10 @@ Version - <>
 
 (WIN) Primary registry key - <>
 
-(NIX) Config file or install directory
+Directory location of associated files
+     X       Timestamp of all associated log files
+     X       Cloud based? ye sor no
+     X       Can we read logs? if yes, 5 most recent lines of logs(NIX) Config file or install directory
 
 Documentation - <>
 
