@@ -42,5 +42,5 @@ COMMON POINT INFRACTIONS
 ```
 Other
 
-Graceful disconnect: DELETE IPTABLE AND/OR NETSH
+Graceful disconnect: DELETE IPTABLES AND/OR NETSH
 ```
