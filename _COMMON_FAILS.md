@@ -39,3 +39,8 @@ COMMON POINT INFRACTIONS
 
 6. Did not access targets
 ```
+```
+Other
+
+Graceful disconnect: DELETE IPTABLE AND/OR NETSH
+```
