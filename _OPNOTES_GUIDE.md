@@ -47,12 +47,18 @@ X---------
 ```
 -----
 ```
+- request IP approval for all targets
+```
+```
 - save
 - copy paste ssh command
 ```
 -----
 ```console
 ssh -MS /tmp/Louise -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null student20@<the ip>
+```
+```
+- notify MC
 ```
 ```console
 ssh -S /tmp/Louise dummy -O forward -L 1111:<next ip>
