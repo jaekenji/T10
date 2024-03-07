@@ -59,6 +59,36 @@ ssh -MS /tmp/Louise -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null 
 ```
 ```
 - notify MC
+- wait for good to go
+```
+```
+REMEMBER WHAT NEEDS TO BE REPORTED
+
+X     Verify all IP addresses on mission plan before beginning operation AI
+
+Req   All connections to each target
+Req   All disconnections from each target
+Req   Collecting a file that exceeds 10MB in size AI
+Req   Total downloads that exceed 100MB per operationAI
+
+Rpt   Encountering logged on Privileged (root;admin) Users AI
+Rpt   Encountering unknown binaries/processes/files/jobs AI
+Rpt   Encountering any form of abnormal/irregular/remote logging AI
+Rpt   Encountering security productsAI
+Rpt   Logs that have been changed based on your actions on target
+Rpt   Providing details for DEBRIEF after operation
+Rpt   DEBRIEF Template and example is provided at the bottom of this document
+Rpt   MUST include 1 sentence per target, as well as logged in privileged user information
+
+Req   Deleting anything from a target device AI
+Req   Placing any file on target AI
+Req   Adding an IP to the mission plan AI
+Req   Changing anything on a target device AI
+Req   Verifying T10 effect immediately before emplacing it AI
+Req   Taking any action not identified in the mission plan AI
+```
+```
+- vet
 ```
 ```console
 ssh -S /tmp/Louise dummy -O forward -L 1111:<next ip>
