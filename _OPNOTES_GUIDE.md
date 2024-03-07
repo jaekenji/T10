@@ -95,47 +95,35 @@ Req   Verifying T10 effect immediately before emplacing it AI
 Req   Taking any action not identified in the mission plan AI
 ```
 ```
+CYCLE OF AWESOMENESS
+
 - vet
+- opnotes
+- mc
+- analyst
+- nsdb
+- repeat
 ```
 ```console
 ssh -S /tmp/Louise dummy -O forward -L 1111:<next ip>
 ```
 ```
+if scans are asked
+```
+```
 ****** SCAN ******
-
 
 ip r
 ip n
+
+
 ping -c <ip>
+for i in {1..254} ;do (ping -c 1 192.168.0.$i | grep "bytes from" &) ;done
+FOR /L %i IN (1,1,254) DO (ping -n 1 192.168.1.%i | FIND "Reply" && echo 192.168.1.%i is up)
+
+
 nc -nczz <ip> <port>
 ssh -S /tmp/<T> dummy -O forward -D 9050
 proxychains nmap -Pn -n -vvv -T3 -sT -pT:22,111,22022,80,443,445,3389 <ip>
 ssh -S /tmp/<T> dummy -O cancel -D 9050
-
-
-****** IPTABLES ******
-
-(is iptables on?)
-lsmod
-
-(are there rules?)
-sudo iptables -L
-sudo iptables -t nat -L -n
-
-(configure)
-sudo iptables -t nat -A PREROUTING -p tcp --dport 11337 -j DNAT --to-destination <ip>:<dst>
-
-sudo iptables -t nat -A POSTROUTING -p tcp --dport 22 -j SNAT --to-source <MY IP (KALI NON FLOAT)>
-or
-iptables -t nat -A POSTROUTING -p tcp --dport 22 -j MASQUERADE
-
-
-****** ABNORMAL LOGGING ******
-
-Target
-Name
-PID
-PPID
-User of
-
 ```
