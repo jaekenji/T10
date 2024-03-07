@@ -62,7 +62,14 @@ ssh -MS /tmp/Louise -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null 
 - wait for good to go
 ```
 ```
-REMEMBER WHAT NEEDS TO BE REPORTED
+ANALYST - REMEMBER WHAT NEEDS TO BE REPORTED
+
+Req   MAC address and IP of all interfaces upon connection
+Req   The completion of any analyst action in the target section
+Req   Remote and local file hashes for all collected files.
+```
+```
+MC - REMEMBER WHAT NEEDS TO BE REPORTED
 
 X     Verify all IP addresses on mission plan before beginning operation AI
 
