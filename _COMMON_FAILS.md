@@ -23,3 +23,19 @@ NUMBER 1: MISSED NONSTANDARDS
 
 9. Daily Read Guidence
 ```
+```
+COMMON POINT INFRACTIONS
+
+1. Missed analyst objectives
+
+2. Failed access attempts/ multiple connections
+
+3. Incomplete Non-standard reports
+
+4. Analyst notifications
+> analyst tasks, mandatory reports
+
+5. Missed information in opnotes
+
+6. Did not access targets
+```
