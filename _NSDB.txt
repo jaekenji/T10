@@ -1,0 +1,99 @@
+*****Security Product Report*****
+
+Target: <T# and IP >
+
+Name - <>
+
+Version - <>
+
+(WIN) Primary registry key - <>
+
+(NIX) Config file or install directory
+
+Documentation - <>
+
+Recommendation - <>
+
+*****End of Report*****
+
+
+
+*****Malware Report*****
+
+Target: <T# and IP >
+
+Name - <>
+
+Hash - <>
+
+PID - <>
+
+PPID - <>
+
+User - <>
+
+File type - <>
+
+Supporting files - <>
+
+Associated Logs - <>
+
+Persistence - <>
+
+Documentation - <>
+
+Description - <>
+
+Recommendation - <>
+
+*****End of Report*****
+
+
+
+*****Abnormal Logging Report*****
+
+Target: <T# and IP >
+
+Name - <>
+
+PID - <>
+
+PPID - <>
+
+User - <>
+
+Location of config file - <>
+
+Remote IP (hostname if IP cannot be identified) - <>
+
+Network connections - <>
+
+Documentation - <>
+
+Description - <>
+
+Recommendation - <>
+
+*****End of Report*****
+
+
+
+*****Privileged User Report*****
+
+Target: <T# and IP >
+
+User - <>
+
+Access Time - <>
+
+Access Method - <>
+
+Privileges - <>
+
+Activity - <>
+
+Description - <>
+
+Recommendation - <>
+
+*****End of Report*****
