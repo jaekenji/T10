@@ -30,6 +30,7 @@ sudo ls -latr /var/spool/cron
 
 sudo ls -latr /var/spool/cron/crontabs
 sudo ls -latr /var/spool/cron/atjobs
+sudo ls -latr /var/spool/cron/atspool
 
 tail -100 /var/spool/cron
 df
@@ -46,8 +47,8 @@ for user in $(cut -d: -f1  /etc/passwd); do echo "###### $user crontab is :"; su
 cat /etc/crontab
 ls -la /etc/cron.*
 
-find / \( -path /proc -prune -o -path /sys -prune \) -o -mmin -<minutes> -type f -print0 | xargs -0 ls -latr
- 
+find / \( -path /proc -prune -o -path /sys -prune \) -o -mmin -30 -type f -print0 | xargs -0 ls -latr
+
 sestatus OR getenforce
 
 sudo cat /root/.bash_history
@@ -63,6 +64,8 @@ ps -elf
 netstat -ltpn
 ls -latr /var/log
 find / \( -path /proc -prune -o -path /sys -prune \) -o -mmin -<minutes> -type f -print0 | xargs -0 ls -latr
+exit
+
 
 ****** SCAN ******
 
@@ -76,7 +79,7 @@ proxychains nmap -Pn -n -vvv -T3 -sT -pT:22,111,22022,80,443,445,3389 <ip>
 ssh -S /tmp/<T> dummy -O cancel -D 9050
 
 
-****** IPTABLES ******
+***** IPTABLES ******
 
 (is iptables on?)
 lsmod
@@ -113,29 +116,44 @@ ssh -S /tmp/Louise dummy -O forward -L 1111:<next ip>
 
 query user
 wmic computersystem get username
+
+net user <username>
+
 date /t & time /t
 systeminfo
 ver
-
-dir C:\ /a /o:-d
-dir /a /o:-d
-dir /a /o:-d ..
-
-dir /o:d /t:w c:\
-dir /o:d /t:w c:\windows\temp
-dir /o:d /t:w c:\windows\
-dir /o:d /t:w c:\windows\system32
-dir /o:d /t:w c:\windows\system32\winevt\logs
-dir /o:d /t:w &quot;%appdata%\microsoft\windows\start menu\programs\startup&quot;
-
-dir C:\Users\Administrator /a /o:-d
-dir C:\Windows\Temp /a /o:-d
-dir C:\Users /a /o:-d
 
 tasklist /v
 wmic process get ProcessId,ParentProcessId,ExecutablePath | findstr <PID>
 ipconfig /all
 netstat /anob
+
+dir C:\ /a /o:-d
+dir /a /o:-d
+dir /a /o:-d ..
+
+dir /o:d /t:w c:\windows\temp
+dir /o:d /t:w c:\windows\
+dir /o:d /t:w c:\windows\system32
+dir /o:d /t:w c:\windows\system32\winevt\logs
+dir /o:d /t:w "%appdata%\microsoft\windows\start menu\programs\startup"
+
+dir C:\Users\Administrator /a /o:-d
+dir C:\Windows\Temp /a /o:-d
+dir C:\Users /a /o:-d
+dir C:\Users\Public /a /s /o-d
+
+
+
+netsh advfirewall show allprofiles
+net share
+
+certutil -hashfile "C:\" MD5
+
+reg query hklm\software\microsoft\windows\currentversion\run
+reg query hklm\software\microsoft\windows\currentversion\runonce
+reg query hklm\software
+reg query hklm\SYSTEM\CurrentControlSet\Services
 
 dir /a /s /b /o:-d "C:\Windows\System32\Tasks"
 dir /a /s /b /o:-d "C:\Windows\System32\Tasks\*"
