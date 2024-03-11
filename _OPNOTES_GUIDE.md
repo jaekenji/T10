@@ -128,3 +128,11 @@ ssh -S /tmp/<T> dummy -O forward -D 9050
 proxychains nmap -Pn -n -vvv -T3 -sT -pT:22,111,22022,80,443,445,3389 <ip>
 ssh -S /tmp/<T> dummy -O cancel -D 9050
 ```
+```
+on exit
+```
+```
+run commands
+exit
+report to mc
+```
