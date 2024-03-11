@@ -58,7 +58,7 @@ X---------
 ssh -MS /tmp/Louise -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null student20@<the ip>
 ```
 ```
-- request permission to connect
+- WAIT UNTIL MISSION START TIME
 - notify MC
 - wait for good to go
 ```
