@@ -55,7 +55,7 @@ X---------
 ```
 -----
 ```console
-ssh -MS /tmp/Louise -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null student20@<the ip>
+ssh -MS /tmp/ -p    -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null student20@
 ```
 ```
 - WAIT UNTIL MISSION START TIME
@@ -106,7 +106,7 @@ CYCLE OF AWESOMENESS
 - repeat
 ```
 ```console
-ssh -S /tmp/Louise dummy -O forward -L 1111:<next ip>
+ssh -S /tmp/ dummy -O forward -L 1111:
 ```
 ```
 if scans are asked
