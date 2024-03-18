@@ -1,0 +1,58 @@
+ANGRYAARDVARK01
+2024-03-18
+Start Time: 0900
+Duration: 6 hours
+MC: mc#
+Operator: student#
+Analyst: analyst#
+
+Type of Operation: Cyber Intelligence, Surveillance and Reconnaissance (C-ISR)
+
+Objective: Enumerate Krasnovian 1st Artillery BDE internal network (192.168.169.0/24).
+
+Tools/Techniques: All connections will be established through SSH masquerades. Ports in use will be dependent on target location and are subject to change. All scanning must be conducted through secure tunnels. Nmap and traceroute command(s) are authorized but unreliable and known to produce false positives. Performing an entire port sweep is unauthorized. All scans must be 1000 ports or less to minimize network traffic.
+
+Credentials: engineer#::enshallah // caisson#::tread_depth
+**administrators documented to frequently implement default creds on internal routers and various other devices to enable incident response outsourcing
+
+Prior Approvals: sudo is authorized ONLY for requisite commands unless otherwise instructed. Windows Defender is assumed to be installed and enabled network wide on all Windows devices within Krasnovian 1st Artillery BDE. MD has blanket approved operating and coexisting with all Microsoft Security Essentials (MSE) suites, to include Windows Defender enabled up to v. 10 /8.1 32-bit/64-bit and Microsoft Defender Antivirus.
+
+Scheme of Maneuver:
+>T1:  10.50.24.19
+->T2: 10.20.169.121
+-->T3: Unknown internal router (this router should be utilized to perform any further network enumeration inside the 192.168.169.0/24 private IP space)
+
+Target Section:
+
+T1:
+Hostname: EXT_RTR
+IP: 10.50.24.19 // 10.20.169.33
+OS: Linux v. unknown
+Creds: engineer#::enshallah
+Last Known SSH Port: 10123
+Security Product(s): Unknown
+Malware: Unknown
+Implant: None
+Action: Perform SSH masquerade and redirect to the next target.
+
+T2:
+Hostname: WEBSERVER
+IP: 10.20.169.121
+OS: Linux v. unknown
+Creds: caisson#::tread_depth
+Last Known SSH Port: 52203
+Security Product(s): Unknown
+Malware: Unknown
+Implant: None
+Action: Perform SSH masquerade. Identify the next target (the suspected routing device is believed to be in the 10.20.169.128/25 subnet with an open ssh port in the range of 52000 - 52999). Redirect to the next target.
+
+T3:
+Hostname: Unknown
+IP: Unknown
+OS: Possible VyOS
+Creds: Unknown - Request analyst input
+Last Known SSH Port: Unknown - See scan results and request analyst input
+Security Product(s): Unknown
+Malware: Unknown
+Implant: None
+Action: Test credentials supplied by analyst via SSH masquerade. Conduct network discovery and record all results. Network discovery will at a minimum consist of scanning to determine all potential target IP’s, OS’s, and SSH Ports.  SSH ports for the potential target devices in this network are usually in the 33000 range. Conclude operation.
