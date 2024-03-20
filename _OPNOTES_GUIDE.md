@@ -1,4 +1,8 @@
 ```
+kali
+root
+```
+```
 - daily reads
 - make op directory
 ```
